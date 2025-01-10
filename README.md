@@ -41,4 +41,38 @@ Features
 
 5. Interactive Plot:
 
-- Plots heart rate values over time using Matplotlib.
+- Plots heart rate values over time using **Matplotlib**.
+
+**Installation**
+1. Clone the repository:<br/>
+
+                          git clone https://github.com/your-username/heart-rate-monitor.git
+   
+                          cd heart-rate-monitor
+3. Install dependencies:
+     ```python
+                          pip install -r requirements.txt
+  - The dependencies include:
+    - `opencv-python`
+    - `mediapipe`
+    - `matplotlib`
+    - `numpy`
+    - `scipy`
+--------------------------------------------------------------------------------------------------------------
+
+4. Implementation:
+
+  - Ensure your webcam is enabled.
+  - The application will display a live video feed with overlaid heart rate and HRV values.
+  - Press the STOP button or q to exit.
+
+
+**Acknowledgments**
+
+    MediaPipe: For face detection and landmark tracking.
+    OpenCV: For video processing.
+    Matplotlib: For real-time visualization.
+
+
+
+
