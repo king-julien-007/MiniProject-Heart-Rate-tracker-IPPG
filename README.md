@@ -16,15 +16,29 @@ Features
 - Stop Functionality: Includes a **STOP** button for ***user interaction***.
 
 **How It Works**
-Face Detection:
+1. Face Detection:
 
 - Uses MediaPipe FaceMesh to locate facial landmarks.
 - Extracts a Region of Interest (ROI) from the forehead for signal processing.
  
-Signal Processing:
+2. Signal Processing:
 
 - Computes average color values (RGB) from the ROI for each frame.
 - Applies the POS algorithm(Plane-Orthogonal-to-Skin).<br/>
 
                    S(t) = 3R(t) - 2G(t)
 - Filters the computed signal with a bandpass filter (**0.7–4.0 Hz**).
+
+3. Heart Rate and HRV Calculation:
+
+- Detects peaks in the filtered signal to calculate heart rate (**BPM**).
+- Computes HRV as the standard deviation of the intervals between peaks.
+
+4. Visualization:
+
+- Displays heart rate and HRV metrics in a **real-time overlay**.
+- Dynamically visualizes pulsation intensity on the ***ROI***.
+
+5. Interactive Plot:
+
+- Plots heart rate values over time using Matplotlib.
