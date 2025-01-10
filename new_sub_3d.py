@@ -45,26 +45,26 @@ def create_modern_overlay(frame, heart_rate, hrv):
     h, w = frame.shape[:2]
     overlay = frame.copy()
     
-    # Create a sleek dark overlay panel
+    # UI ENTITIES 
     panel_width = 300
     panel_height = 140
     panel_x = w - panel_width - 20
     panel_y = 20
     
-    # Draw main panel background with gradient
+    #MAIN PANEL BG WITH GRADIENT
     cv2.rectangle(overlay, (panel_x, panel_y), 
                  (panel_x + panel_width, panel_y + panel_height), 
                  (0, 0, 0), -1)
     
-    # Add accent line
+    # OVERLAY ACCENT LINE
     cv2.line(overlay, (panel_x, panel_y), 
              (panel_x + panel_width, panel_y), 
              (0, 255, 255), 2)
     
-    # Add metrics with enhanced styling
+    # FONT STYLING
     font = cv2.FONT_HERSHEY_SIMPLEX
     
-    # BPM Display
+    # BPM PRINTFN()
     cv2.putText(overlay, "BPM", 
                 (panel_x + 20, panel_y + 35),
                 font, 0.7, (150, 150, 150), 1)
@@ -105,7 +105,7 @@ def init_plot():
     ax.set_xlabel('Time (s)', color='#888888', fontsize=10)
     ax.set_ylabel('BPM', color='#888888', fontsize=10)
     
-    # Set fixed y-axis limits
+    # Y LIMITS
     ax.set_ylim(40, 120)
     
     # Customize grid
